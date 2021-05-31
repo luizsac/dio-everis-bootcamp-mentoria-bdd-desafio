@@ -3,11 +3,11 @@
     "line": 4,
     "elements": [
       {
-        "start_timestamp": "2021-05-30T19:22:02.264Z",
+        "start_timestamp": "2021-05-31T20:46:29.088Z",
         "before": [
           {
             "result": {
-              "duration": 20994200,
+              "duration": 15622400,
               "status": "passed"
             },
             "match": {
@@ -15,14 +15,14 @@
             }
           }
         ],
-        "line": 17,
-        "name": "Aumentar a quantidade de produtos atraves de detalhes do produto",
+        "line": 25,
+        "name": "Realizar compra",
         "description": "",
-        "id": "realizar-compra-no-e-commerce;aumentar-a-quantidade-de-produtos-atraves-de-detalhes-do-produto",
+        "id": "realizar-compra-no-e-commerce;realizar-compra",
         "after": [
           {
             "result": {
-              "duration": 2018592500,
+              "duration": 1175052500,
               "status": "passed"
             },
             "match": {
@@ -35,10 +35,10 @@
         "steps": [
           {
             "result": {
-              "duration": 13060435300,
+              "duration": 9634911200,
               "status": "passed"
             },
-            "line": 18,
+            "line": 26,
             "name": "que um usuario acessa o site \"http://automationpractice.com\"",
             "match": {
               "arguments": [
@@ -53,15 +53,15 @@
           },
           {
             "result": {
-              "duration": 3423996500,
+              "duration": 2779326300,
               "status": "passed"
             },
-            "line": 19,
-            "name": "pesquisa pelo produto \"Dress\"",
+            "line": 27,
+            "name": "pesquisa pelo produto \"Blouse\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Dress",
+                  "val": "Blouse",
                   "offset": 23
                 }
               ],
@@ -71,71 +71,107 @@
           },
           {
             "result": {
-              "duration": 3094369600,
+              "duration": 3455376900,
               "status": "passed"
             },
-            "line": 20,
-            "name": "acessa o produto \"Printed Chiffon Dress\"",
+            "line": 28,
+            "name": "adiciona o produto \"Blouse\" ao carrinho",
             "match": {
               "arguments": [
                 {
-                  "val": "Printed Chiffon Dress",
-                  "offset": 18
-                }
-              ],
-              "location": "com.everis.steps.ResultadoPesquisaSteps.acessarProduto(java.lang.String)"
-            },
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "duration": 524986200,
-              "status": "passed"
-            },
-            "line": 21,
-            "name": "aumenta a quantidade produto",
-            "match": {
-              "location": "com.everis.steps.DetalhesProdutoSteps.aumentarQuantidadeProduto()"
-            },
-            "keyword": "E "
-          },
-          {
-            "result": {
-              "duration": 3595414000,
-              "status": "passed"
-            },
-            "line": 22,
-            "name": "adiciona o produto \"Printed Chiffon Dress\" ao carrinho",
-            "match": {
-              "arguments": [
-                {
-                  "val": "Printed Chiffon Dress",
+                  "val": "Blouse",
                   "offset": 20
                 }
               ],
               "location": "com.everis.steps.ResultadoPesquisaSteps.adicionarProdutoAoCarrinho(java.lang.String)"
             },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 2209188200,
+              "status": "passed"
+            },
+            "line": 29,
+            "name": "acessa o checkout",
+            "match": {
+              "location": "com.everis.steps.CarrinhoSteps.acessarCheckout()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 2435804100,
+              "status": "passed"
+            },
+            "line": 30,
+            "name": "realiza o login usando o email \"automatedcostumer@amail.com\" e a senha \"everiscostumer\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "automatedcostumer@amail.com",
+                  "offset": 32
+                },
+                {
+                  "val": "everiscostumer",
+                  "offset": 72
+                }
+              ],
+              "location": "com.everis.steps.CheckoutSteps.realizarLogin(java.lang.String,java.lang.String)"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1698523200,
+              "status": "passed"
+            },
+            "line": 31,
+            "name": "confirma o endereco de entrega",
+            "match": {
+              "location": "com.everis.steps.CheckoutSteps.confirmarEndereco()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 1977273300,
+              "status": "passed"
+            },
+            "line": 32,
+            "name": "escolhe a forma de transporte",
+            "match": {
+              "location": "com.everis.steps.CheckoutSteps.escolherFormaDeTransporte()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 4370794800,
+              "status": "passed"
+            },
+            "line": 33,
+            "name": "o pagamento for confirmado",
+            "match": {
+              "location": "com.everis.steps.CheckoutSteps.realizarPagamento()"
+            },
             "keyword": "Quando "
           },
           {
             "result": {
-              "duration": 333998600,
+              "duration": 246972100,
               "status": "passed"
             },
-            "line": 23,
-            "name": "o produto \"Printed Chiffon Dress\" deve possuir a quantidade 2",
+            "line": 34,
+            "name": "deve ser apresentado a mensagem \"Your order on My Store is complete.\"",
             "match": {
               "arguments": [
                 {
-                  "val": "Printed Chiffon Dress",
-                  "offset": 11
-                },
-                {
-                  "val": "2",
-                  "offset": 60
+                  "val": "Your order on My Store is complete.",
+                  "offset": 33
                 }
               ],
-              "location": "com.everis.steps.CarrinhoSteps.oProdutoApresentouQuantidadeEsperada(java.lang.String,java.lang.String)"
+              "location": "com.everis.steps.CheckoutSteps.aMensagemFoiExibidaNaPagina(java.lang.String)"
             },
             "keyword": "Entao "
           }

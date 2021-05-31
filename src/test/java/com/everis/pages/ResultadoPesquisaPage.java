@@ -34,4 +34,5 @@ public class ResultadoPesquisaPage extends BasePage {
 		tituloProduto.click();
 		log("Acesso ao produto: " + nomeProduto);
 	}
+
 }
